@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+.App {
+  text-align: center;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0, 50%, 60%);
+  height: 4rem;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-shadow: 2px 2px #ff0000, 4px 4px white;
+  font-family: "Montserrat", sans-serif;
+  /* border-bottom: 4px solid hsl(0, 0%, 0%); */
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar {
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  width: 15rem;
+  border: solid 1px black;
+  margin: 2rem;
+  height: 30rem;
+}

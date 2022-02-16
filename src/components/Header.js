@@ -6,7 +6,9 @@ const Header = ()  =>{
     
     return(
         <div className='Header'>
-            - Where's Waldo -
+            <h1>
+                - Where's Waldo -
+            </h1>
         </div>
     )
 

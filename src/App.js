@@ -1,17 +1,13 @@
 
 import './App.css';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import Game from './components/Game'
 function App() {
   return (
-    <div className="App">
+    <div className='container'>
       <Header/>
       <div className='main-container'>
-        <Sidebar />
         <Game />
-
-
       </div>
 
     </div>

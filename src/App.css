@@ -8,9 +8,9 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 5rem;
-  font-size: 1.7em;
+  justify-content: space-around;
+  height: 70px;
+  font-size: 0.7em;
   background-color: hsl(0, 50%, 60%);
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px #ff0000, 4px 4px white;
@@ -21,4 +21,13 @@
   display: flex;
   min-width: 600px;
   justify-content: center;
+}
+
+.pics {
+  display: flex;
+  justify-content: space-around;
+  gap: 5;
+  background-color: black;
+  box-sizing: border-box;
+  padding: 0.3rem;
 }

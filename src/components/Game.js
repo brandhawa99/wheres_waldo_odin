@@ -1,5 +1,5 @@
 
-import themePark from './img/themePark.jpg'
+import themePark from '../img/themePark.jpg'
 
 // 600x796
 

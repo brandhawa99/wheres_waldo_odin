@@ -52,3 +52,53 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
+
+.win-container {
+  position: absolute;
+  top: 100;
+  left: 100;
+  transform: translateX(50%);
+  transform: translateY(50%);
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: white;
+  border-radius: 0.4rem;
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.win-container h1 {
+  padding: 0;
+  margin: 0;
+}
+.win-container p {
+  padding: 0;
+  margin: 0;
+}
+
+.win-container button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.win-container button:hover {
+  background-color: hsl(122, 41%, 42%); /* Green */
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}

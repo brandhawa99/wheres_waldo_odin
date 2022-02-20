@@ -10,9 +10,9 @@ const Header = (props)  =>{
                 - Where's Waldo -
             </h1>
             <div className='pics'>
-                <img src={props.dog} alt='dog'/>
-                <img src={props.guy} alt='guy' />
-                <img src={props.hat} alt='hat'/>
+                <img style={ props.dogF ? { filter:'grayscale(100%)'} : {filter:""} }  src={props.dog} alt='dog'/>
+                <img style={ props.guyF ? { filter:'grayscale(100%)'} : {filter:""} } src={props.guy} alt='guy' />
+                <img style={ props.strawF ? { filter:'grayscale(100%)'} : {filter:""} } src={props.hat} alt='hat'/>
             </div>
         </div>
     )

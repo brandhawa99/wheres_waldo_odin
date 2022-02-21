@@ -55,9 +55,6 @@ function App() {
     setYCalculated(e.pageY);
     setXClick(e.pageX);
     setYClick(e.pageY)
-    // console.log("  ");
-    // console.log('xCord:', xCord, 'yCord:', e.pageY )
-    // console.log('calculated',xCalculated, yCalculated)
 }
 const UpdateClick = () =>{
   setClick(!click);
@@ -65,9 +62,7 @@ const UpdateClick = () =>{
 }
 
 /**
- * 
- * @param {*} e 
- * @returns 
+ * Sets all found values to false and sets win value to false
  */
 const restartGame = () =>{
   setDog( prevState =>({

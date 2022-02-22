@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Game from './components/Game'
 import Circle from './components/Circle';
 import WinScreen from './components/WinScreen'
+import addStuff  from './Firebase/Firebase';
 
 import dogIMG from './img/dog.jpg'
 import hatIMG from './img/guyInHat.jpg'
@@ -146,6 +147,7 @@ const checkGuess = (e) =>{
           <WinScreen restart={restartGame} />
         }
       </div>
+      <button onClick={addStuff}>this is a test button</button>
 
     </div>
   );

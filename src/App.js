@@ -147,7 +147,6 @@ const checkGuess = (e) =>{
           <WinScreen restart={restartGame} />
         }
       </div>
-      <button onClick={addStuff}>this is a test button</button>
 
     </div>
   );

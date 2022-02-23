@@ -1,11 +1,12 @@
-
+import {getFirestore, addDoc, collection, getDoc } from 'firebase/firestore';
 import React, {useEffect, useState} from 'react'
 import './App.css';
 import Header from './components/Header';
 import Game from './components/Game'
 import Circle from './components/Circle';
 import WinScreen from './components/WinScreen'
-import addStuff  from './Firebase/Firebase';
+
+import firebase from './Firebase/Firebase';
 
 import dogIMG from './img/dog.jpg'
 import hatIMG from './img/guyInHat.jpg'
@@ -129,6 +130,10 @@ const checkGuess = (e) =>{
     }
 
   },[dog,straw,guy])
+
+  // useEffect(()=>{
+  //   firebase.addScore({name:'baltej'})
+  // },[])
         
   return (
     <div className='container'>
@@ -147,6 +152,7 @@ const checkGuess = (e) =>{
           <WinScreen restart={restartGame} />
         }
       </div>
+      <button onClick={firebase.addScore({name:'baltej'})}>ADD NAME BUTTON</button>
 
     </div>
   );

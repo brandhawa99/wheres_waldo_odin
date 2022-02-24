@@ -1,8 +1,9 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 
 const WinScreen = props =>{
+    const [added, setAdded] = useState(false);
 
 
     return(

@@ -25,6 +25,11 @@ const WinScreen = props =>{
         setPlayerData(stuff);
   
       }
+    const doThis = () =>{
+        props.addUser();
+        showScore();
+
+    }
 
 
     return(
@@ -36,7 +41,7 @@ const WinScreen = props =>{
                 <span>{props.time} seconds </span>
                 <input maxLength={45} onChange={props.name} placeholder='Name...'  />
                 {/* <button onClick={props.restart}>Restart</button> */}
-                <button onClick={props.addUser, showScore}>Add Your Score</button> 
+                <button onClick={doThis}>Add Your Score</button> 
             </div>
         }
         {added && 

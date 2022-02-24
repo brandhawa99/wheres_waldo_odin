@@ -42,10 +42,10 @@ const WinScreen = props =>{
         {added && 
             <div> 
                 <h1>Scores: </h1>
-                {playerData.map((player)=>{
                     <div> 
                         <span> {props.playerName}:{props.time} seconds</span>
                     </div>
+                {playerData.map((player)=>{
                     return(
                         <div id={player.id}> 
                             <span>{player.name}:  {player.difference} seconds </span>

@@ -13,7 +13,7 @@ import guyIMG from './img/blackHatBlueshirt.jpg'
 
 //firebase imports 
 import {db} from './firebase'
-import {addDoc, collection, doc, getDocs, Timestamp} from'firebase/firestore';
+import {addDoc, collection, Timestamp} from'firebase/firestore';
 
 function App() { 
   /**

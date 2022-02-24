@@ -1,4 +1,4 @@
-import {getFirestore, addDoc, collection, getDoc } from 'firebase/firestore';
+
 import React, {useEffect, useState} from 'react'
 import './App.css';
 import Header from './components/Header';
@@ -6,12 +6,14 @@ import Game from './components/Game'
 import Circle from './components/Circle';
 import WinScreen from './components/WinScreen'
 
-import firebase from './Firebase/Firebase';
 
 import dogIMG from './img/dog.jpg'
 import hatIMG from './img/guyInHat.jpg'
 import guyIMG from './img/blackHatBlueshirt.jpg'
 
+//firebase imports 
+import {db} from './firebase'
+import {collection, doc, getDocs} from'firebase/firestore';
 
 function App() {
   /**
@@ -131,10 +133,18 @@ const checkGuess = (e) =>{
 
   },[dog,straw,guy])
 
-  // useEffect(()=>{
-  //   firebase.addScore({name:'baltej'})
-  // },[])
-        
+  const usersCollectionRef = collection(db,'users')
+  useEffect(()=>{
+
+    const getUsers = async() =>{
+      const data = await getDocs(usersCollectionRef);
+      const stuff = await (data.docs.map((doc)=>({...doc.data(),id: doc.id})));
+      console.log(stuff);
+
+    }
+    getUsers();
+  },[])
+   
   return (
     <div className='container'>
       <Header dogF={dog.found} strawF={straw.found} guyF={guy.found} dog={dogIMG} guy={guyIMG} hat={hatIMG}/>
@@ -152,7 +162,6 @@ const checkGuess = (e) =>{
           <WinScreen restart={restartGame} />
         }
       </div>
-      <button onClick={firebase.addScore({name:'baltej'})}>ADD NAME BUTTON</button>
 
     </div>
   );

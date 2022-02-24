@@ -178,7 +178,7 @@ const checkGuess = (e) =>{
 
         }
         {win &&
-          <WinScreen name={nameChange} time={end-start}addUser={CreateUser} restart={restartGame} />
+          <WinScreen playerName={name} name={nameChange} time={end-start}addUser={CreateUser} restart={restartGame} />
         }
       </div>
     </div>

@@ -48,6 +48,14 @@ function App() {
    */
   const [start, setStart] = useState(0);
   const [end , setEnd] = useState(0);
+  const [name, setName] = useState('');
+
+  const nameChange = (e) =>{
+    e.preventDefault();
+    setName(e.target.value);
+    console.log(name);
+
+  }
 
 
   const getCordinatesOfClick = (e) =>{
@@ -141,14 +149,6 @@ const checkGuess = (e) =>{
 
   const usersCollectionRef = collection(db,'users')
   useEffect(()=>{
-
-    const getUsers = async() =>{
-      const data = await getDocs(usersCollectionRef);
-      const stuff = await (data.docs.map((doc)=>({...doc.data(),id: doc.id})));
-      console.log(stuff);
-
-    }
-    getUsers();
     let time = Timestamp.now().seconds;
     setStart(time);
   },[])
@@ -160,8 +160,7 @@ const checkGuess = (e) =>{
   },[win])
 
   const CreateUser = async() =>{
-    const name = 'baltej'
-    await addDoc(usersCollectionRef,{name: name, startTime: start, endTime: end})
+    await addDoc(usersCollectionRef,{name: name, startTime: start, endTime: end, difference: end-start})
 
   }
    
@@ -179,7 +178,7 @@ const checkGuess = (e) =>{
 
         }
         {win &&
-          <WinScreen time={end-start}addUser={CreateUser} restart={restartGame} />
+          <WinScreen name={nameChange} time={end-start}addUser={CreateUser} restart={restartGame} />
         }
       </div>
     </div>

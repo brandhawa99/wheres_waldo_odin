@@ -13,9 +13,9 @@ import guyIMG from './img/blackHatBlueshirt.jpg'
 
 //firebase imports 
 import {db} from './firebase'
-import {collection, doc, getDocs} from'firebase/firestore';
+import {addDoc, collection, doc, getDocs, Timestamp} from'firebase/firestore';
 
-function App() {
+function App() { 
   /**
    * once you win
    */
@@ -42,6 +42,12 @@ function App() {
   const [straw, setStraw]  = useState({name:'straw', image: './img/guyInHat.jpg', x:215.5, y:833, found: false})
   const [dog,setDog] = useState({name:'dog',image: './img/dog.jpg',x: 229.5,y: 436,found:false})
   const [guy,setGuy] = useState({name:'guy',image: './img/dog.jpg',x: 327,y: 670,found:false})
+
+  /**
+   * start time , end time from server from calculateing time it took to complete search
+   */
+  const [start, setStart] = useState(0);
+  const [end , setEnd] = useState(0);
 
 
   const getCordinatesOfClick = (e) =>{
@@ -143,7 +149,21 @@ const checkGuess = (e) =>{
 
     }
     getUsers();
+    let time = Timestamp.now().seconds;
+    setStart(time);
   },[])
+
+  useEffect(()=>{
+      let time = Timestamp.now().seconds
+      setEnd(time)
+      console.log(end, " ", start)
+  },[win])
+
+  const CreateUser = async() =>{
+    const name = 'baltej'
+    await addDoc(usersCollectionRef,{name: name, startTime: start, endTime: end})
+
+  }
    
   return (
     <div className='container'>
@@ -159,10 +179,9 @@ const checkGuess = (e) =>{
 
         }
         {win &&
-          <WinScreen restart={restartGame} />
+          <WinScreen time={end-start}addUser={CreateUser} restart={restartGame} />
         }
       </div>
-
     </div>
   );
 }

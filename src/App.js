@@ -53,8 +53,6 @@ function App() {
   const nameChange = (e) =>{
     e.preventDefault();
     setName(e.target.value);
-    console.log(name);
-
   }
 
 
@@ -156,7 +154,6 @@ const checkGuess = (e) =>{
   useEffect(()=>{
       let time = Timestamp.now().seconds
       setEnd(time)
-      console.log(end, " ", start)
   },[win])
 
   const CreateUser = async() =>{

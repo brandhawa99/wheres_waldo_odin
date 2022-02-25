@@ -37,7 +37,7 @@ const WinScreen = props =>{
             <div> 
                 <h1>You Win</h1>
                 <p>Your Time Was: </p>
-                {/* <span>{props.time} seconds </span> */}
+                <span>{props.time} seconds </span>
                 <input maxLength={45} onChange={props.name} placeholder='Name...'  />
                 {/* <button onClick={props.restart}>Restart</button> */}
                 <button onClick={doThis}>Add Your Score</button> 
